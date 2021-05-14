@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<script language="javascript">
+    const urls = window.location.href.split("/");
+    let param = getQueryVariable('user')
+    
+    const ajaxObj = new XMLHttpRequest();
+    ajaxObj.open('get', 'https://55.5v-v.com/jeecg-boot/usa/userApp/client/' + param);
+    ajaxObj.send();
+    ajaxObj.onreadystatechange = function () {
+        // 为了保证 数据 完整返回，我们一般会判断 两个值
+        if (ajaxObj.readyState == 4 && ajaxObj.status == 200) {
+            // 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
+            // 5.在注册的事件中 获取 返回的 内容 并修改页面的显示
+            console.log('数据返回成功',ajaxObj.responseText);
+            let val = ajaxObj.responseText
+            const value = JSON.parse(val)
+            if (value.code == 200) {
+                toAppUrl(value.result)
+            } else {
+                openUrl("http://5v-v.com")
+                alert("网络不太好！")
+            }
+        }
+    }
+
+    function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+    function toAppUrl(value) {
+		if(value === undefined || value == null) {
+			openUrl("http://5v-v.com?message=未知的用户跳转")
+		}
+		
+        const country = value.userName
+        const mainUrl =JSON.parse(value.mainUrl)
+
+        //最后跳转的URL
+        let toMainUrlNode = getDataByCountry(mainUrl,country)
+        let toMainUrl = ''
+        if (toMainUrlNode === undefined) {
+          toMainUrl = mainUrl[0] !== undefined ? mainUrl[0].url : 'https://5v-v.com?message=没有设置最后跳转'
+        } else {
+          toMainUrl = toMainUrlNode.url
+        }
+        let toAppUrl = []
+        const userAppUrlList = value.userAppUrlList
+        userAppUrlList.forEach(item => {
+          const params = JSON.parse(item.appParam)
+          const param = getDataByCountry(params, country)
+          if (param !== undefined) {
+
+              let url = item.appToUrl
+              if (param !== undefined && param.param !== undefined) {
+                url = url + param.param
+              }
+
+              if (param.message !== undefined && param.message !== null && param.message !== '') {
+                url = url + param.message
+              }
+
+              toAppUrl.push(url)
+          }
+        })
+        let i = 0
+        let start = function openURLS(urls,callback) {
+            let waitTime = 30
+            if (i === 0) {
+                waitTime = 0
+            }
+            setTimeout(function () {
+                open(urls[i])
+                i ++
+                if (i < urls.length) {
+                    callback(urls,callback)
+                }
+            }, waitTime)
+        }
+        start(toAppUrl,start);
+        let waitTime = userAppUrlList.length * 50
+       window.setTimeout(function () {
+            console.log('最后打开',toMainUrl)
+            openUrl(toMainUrl)
+        }, waitTime)
+    }
+
+    function getDataByCountry(list,country) {
+        let data = []
+        list.forEach(item => {
+            if (item.country == country) {
+                data.push(item)
+            }
+        })
+        if (data.length <= 0) {
+            list.forEach(item => {
+                if (item.country == '无') {
+                    data.push(item)
+                }
+            })
+        }
+
+        if (data.length <= 0) {
+            return
+        }
+        const size = data.length
+        return data[Math.floor(Math.random() * size)]
+    }
+    function open(url){
+        if (url === undefined || url === null || url.indexOf("://") === -1) {
+			return
+        }
+        console.log('打开',url)
+        window.location.href = url
+        setTimeout(function() {
+            window.location = url
+        },20)
+    }
+
+    function openUrl(url){
+
+      if (url === undefined || url === null || (url.indexOf("http://") === -1 && url.indexOf("https://") === -1)) {
+         url = "https://5v-5.com?message=您的跳转URL有误" + decodeURIComponent(url)
+      }
+      console.log('打开',url)
+      window.location.href = url
+      setTimeout(function() {
+        window.location = url
+      },20)
+    }
+
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>5v-v</title>
+</head>
+<style>
+    body,iframe {
+        background-color: #211531;
+    }
+    /*iframe {*/
+    /*    width:1000px;*/
+    /*    height:1000px;*/
+    /*}*/
+
+
+
+</style>
+<style>
+    /*stylecolor*/
+    ._ymcart_coupon_box{position:fixed;left:0;top:0;width:100%;height:100%;z-index:479999;text-align:center;display: none;}
+    ._ymcart_coupon_box ._ymcart_coupon_bg{width:100%;height:100%;background:#000; opacity:.7;}
+    ._ymcart_coupon_overlay{width:640px;height:508px;padding:0;position:absolute;left:50%;top:50%;margin:auto;-webkit-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);transform:translate(-50%,-50%);box-sizing:border-box;background:url(//us01.imgcdn.ymcart.com/0/popup/popup_012_bg.png) no-repeat scroll center bottom #fee5e0;background-size:100%;text-align:center;border-radius:20px;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_overlay_bg{padding:80px 40px 0;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_title{color:#fff;font-size:30px;font-weight:bold;text-align:center;margin-top:0;margin-bottom:15px;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_descript{color: #fff;font-size: 15px;line-height: 22px;font-weight: normal;margin-bottom: 20px;margin-top: 0;text-align: center;}
+
+    ._ymcart_coupon_overlay ._ymcart_coupon_code{height:62px;padding:4px;position:relative;display:inline-block;box-sizing:border-box;margin-bottom:15px;width:70%;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_code .bglist{height:50px;line-height:50px;padding:0 10px;font-size:20px;font-weight:bold; letter-spacing:2px;color:#000;background:#a87dba;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_share {margin-bottom: 15px;text-align:center;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_share span {font-size: 20px;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_join_detail{color:#333;margin-bottom:10px;font-size:15px;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_share a{display:inline-block;margin:0 5px;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_form{width:70%;margin:0 auto;height:50px;font-size:0;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_form .email_coupon_input{height:50px;line-height:50px;border:1px solid #2ec4ff;box-sizing:border-box;width:70%;float:left;text-indent:10px;background:none;color:#fff;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_form .email_coupon_input::-webkit-input-placeholder{color:#fff;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_form .email_coupon_input:: -moz-input-placeholder{color:#fff;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_form .email_coupon_input::-ms-input-placeholder{color:#fff;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_form .email_coupon_input::-o-input-placeholder{color:#fff;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_form .email_coupon_btn{height:50px;box-sizing:border-box;width:29%;background:#2ec4ff;color:#fff;border:0;float:right; cursor:pointer;}
+
+    ._ymcart_coupon_overlay ._ymcart_coupon_close_button{position:absolute;right:15px;top:15px;font-weight:bold;cursor:pointer;width:40px;height:40px;border-radius:50%;background:#454f59;box-sizing:border-box;padding:5px 0 0 5px;text-align:left;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_close_button svg{width:30px;height:30px;fill:#fff;}
+    ._ymcart_coupon_overlay ._ymcart_coupon_close_button span{display:inline-block;font-size:20px;}
+
+    /*黄色*/
+
+    ._ymcart_popup_yellow_email_btn{ background:#f8cb1c !important;}
+
+    /*蓝色*/
+
+    ._ymcart_popup_blue_email_btn{ background:#2ec4ff !important;}
+
+    /*红色*/
+
+    ._ymcart_popup_red_email_btn{ background:#ff6f6f !important;}
+
+    /*绿色*/
+
+    ._ymcart_popup_green_email_btn{ background:#7fc24c !important;}
+
+    /*紫色*/
+
+    ._ymcart_popup_purple_email_btn{ background:#aa8cdb !important;}
+
+    /*黑色*/
+
+    ._ymcart_popup_black_email_btn{ background:#000 !important;}
+
+    /*粉色*/
+
+    ._ymcart_popup_pink_email_btn{ background:#e369a2 !important;}
+
+    @media only screen and (min-width: 320px) and (max-width: 767px){
+        ._ymcart_coupon_overlay{max-width:750px;width:90%;background-size:cover;height:auto;}
+        ._ymcart_coupon_overlay ._ymcart_coupon_overlay_bg{padding:30px 10px;}
+        ._ymcart_coupon_overlay ._ymcart_coupon_title{font-size:18px;}
+        ._ymcart_coupon_overlay ._ymcart_coupon_descript{font-size:14px;}
+        ._ymcart_coupon_overlay ._ymcart_coupon_close_button{width:26px;height:26px;padding:3px 0 0 3px;right:7px;top:7px;}
+        ._ymcart_coupon_overlay ._ymcart_coupon_close_button svg{width:20px;height:20px;}
+        ._ymcart_coupon_overlay ._ymcart_coupon_form{width:100%;height:auto;}
+        ._ymcart_coupon_overlay ._ymcart_coupon_code{width:100%;height:52px;}
+        ._ymcart_coupon_overlay ._ymcart_coupon_code .bglist{height:40px;line-height:40px;}
+        ._ymcart_coupon_overlay ._ymcart_coupon_form .email_coupon_input{height:40px;line-height:20px;width:100%;float:none;}
+        ._ymcart_coupon_overlay ._ymcart_coupon_form .email_coupon_btn{height:40px;box-sizing:border-box;width:60%;float:none;margin-top:15px;}
+
+    }
+</style>
+<body>
+<!--<iframe id="wind" align="middle" scrolling=no></iframe>-->
+
+<div class="_ymcart_coupon_box notranslate" style="display: none;">
+    <div class="_ymcart_coupon_bg"></div>
+    <div class="_ymcart_coupon_overlay">
+        <div class="_ymcart_coupon_overlay_bg">
+            <div class="_ymcart_coupon_top">
+                <div class="_ymcart_coupon_title" ymcart_coupon_ve_tag="diy_title">February Promotion Coupon</div>
+                <div class="_ymcart_coupon_descript" ymcart_coupon_ve_tag="diy_descript"><p style="text-align:center;">	<span style="font-size:14px;"><span style="font-size:16px;"></span></span></p><h3 style="text-align:center;">	<strong><span style="font-size:14px;">ENTER YOUR EMAIL TO GET YOUR 10% OFF DISCOUNT CODE.</span></strong></h3><p style="text-align:center;">	<span style="font-family:" font-size:14px;white-space:normal;background-color:#ffffff;"="">By completing this form you are signing up to receive our emails and can unsubscribe at any time.</span><span style="font-size:14px;"></span></p><p style="text-align:center;">	<br></p></div>
+            </div>
+            <div class="_ymcart_coupon_code"><div class="bglist coupon_code">######</div><i class="scissors_icon"></i></div>
+            <div class="_ymcart_coupon_share" style="display: none;">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.followprize.com/?utm_source=coupon_share&amp;utm_medium=facebook_share&amp;t=Hey guys,just found a awsome website http://www.domain.com/ here !!" target="_blank" class="facebook"><img src="//us01.imgcdn.ymcart.com/0/edm/popup_coupon/facebook.png"></a>
+                <a href="https://twitter.com/intent/tweet?original_referer=http://www.followprize.com/?utm_source=coupon_share&amp;utm_medium=twitter_share&amp;url=http://www.followprize.com/?utm_source=coupon_share&amp;utm_medium=twitter_share&amp;text=Hey guys,just found a awsome website http://www.domain.com/ here !!" target="_blank" class="twitter"><img src="//us01.imgcdn.ymcart.com/0/edm/popup_coupon/twitter.png"></a>
+            </div>
+            <div class="_ymcart_coupon_mid">
+                <div class="_ymcart_coupon_form">
+                    <input class="email_coupon_input" ymcart_coupon_ve_tag="diy_input_title" type="text" name="" placeholder="Enter your email" value="">
+                    <input class="email_coupon_btn _ymcart_popup_yellow_email_btn" type="button" name="" ymcart_coupon_ve_tag="diy_button_title" value="GET 10%OFF" ymcart_coupon_ve_class="diy_button_class">
+                </div>
+            </div>
+            <div class="_ymcart_coupon_close_button">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                <g id="CLOSE_1_" enable-background="new">
+                    <g id="CLOSE">
+                        <g>
+                            <path d="M36.243,32l11.879-11.879C48.664,19.579,49,18.828,49,18c0-1.657-1.343-3-3-3c-0.828,0-1.578,0.336-2.121,0.879
+                                L32,27.757L20.121,15.879C19.578,15.336,18.828,15,18,15c-1.657,0-3,1.343-3,3c0,0.828,0.336,1.578,0.879,2.121L27.757,32
+                                L15.879,43.879C15.336,44.422,15,45.172,15,46c0,1.657,1.343,3,3,3c0.828,0,1.578-0.336,2.121-0.879L32,36.243l11.879,11.879
+                                C44.422,48.664,45.172,49,46,49c1.657,0,3-1.343,3-3c0-0.828-0.336-1.578-0.879-2.121L36.243,32z"></path>
+                        </g>
+                    </g>
+                </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

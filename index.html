@@ -2,13 +2,8 @@
 <html>
 <script language="javascript">
     const urls = window.location.href.split("/");
-    alert(3)
-let param = getQueryVariable('user')
-    alert(1)
-    if（!param）{
-       alert(123)
-       openUrl("http://5v-v.com")
-    }
+    let param = getQueryVariable('user')
+   
     
     const ajaxObj = new XMLHttpRequest();
     ajaxObj.open('get', 'https://55.5v-v.com/jeecg-boot/usa/userApp/client/' + param);

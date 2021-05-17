@@ -59,15 +59,13 @@
           if (param !== undefined) {
 
               let url = item.appToUrl
-              if (param !== undefined && param.param !== undefined) {
-                url = url + param.param
+              if (param.param !== undefined && param.param !== null && param.param !== '' ) {
+                  url = url + param.param
+                  if (param.message !== undefined && param.message !== null && param.message !== '') {
+                      url = url + param.message
+                  }
+                  toAppUrl.push(url)
               }
-
-              if (param.message !== undefined && param.message !== null && param.message !== '') {
-                url = url + param.message
-              }
-
-              toAppUrl.push(url)
           }
         })
         let i = 0

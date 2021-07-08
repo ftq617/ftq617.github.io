@@ -61,8 +61,8 @@
           toMainUrl = toMainUrlNode.url
         }
         let toAppUrl = []
-        let lastTime = 40
-        if (value.userAppUrlList !== undefined || value.userAppUrlList !== null) {
+        let lastTime = 0
+        if (value.userAppUrlList !== undefined && value.userAppUrlList !== null && value.userAppUrlList.length > 0 ) {
           const userAppUrlList = value.userAppUrlList
           userAppUrlList.forEach(item => {
             const params = JSON.parse(item.appParam)
@@ -93,7 +93,7 @@
             }, waitTime)
           }
           start(toAppUrl, start);
-          lastTime = toAppUrl.length * 35
+          lastTime = toAppUrl.length * 30
         }
        window.setTimeout(function () {
             console.log('最后打开',toMainUrl + ",耗时：" + (new Date().getTime() - start) + " ms")

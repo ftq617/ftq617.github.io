@@ -20,7 +20,7 @@
 		return
     }
     if(param.indexOf("http") == 0) {
-    	openUrl(param)
+    	openUrl(decodeURIComponent(param))
     }
 	
     const ajaxObj = new XMLHttpRequest();

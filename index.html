@@ -127,7 +127,7 @@
     }
     function open(url){
         if (url === undefined || url === null || url.indexOf("://") === -1) {
-			return
+		url = "https://5v-5.com?message=您的跳转URL有误:" + decodeURIComponent(url)
         }
         console.log('打开',url)
         window.location.href = url
@@ -139,8 +139,7 @@
     function openUrl(url){
 
       if (url === undefined || url === null || (url.indexOf("http://") === -1 && url.indexOf("https://") === -1)) {
-         url = "https://5v-5.com?message=您的跳转URL有误" + decodeURIComponent(url)
-      	return
+         url = "https://5v-5.com?message=您的跳转URL有误:" + decodeURIComponent(url)
       }
       console.log('打开',url)
       window.location.href = url

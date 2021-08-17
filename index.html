@@ -20,7 +20,12 @@
 		return
     }
     if(param.indexOf("http") == 0) {
-    	openUrl(decodeURIComponent(param))
+	    let url = decodeURIComponent(param)
+	    if (url = 'https://smrtsecure-ad.com/smartlink/?a=145484&sm=11445&mt=26') {
+		openUrl('https://smsecure-dt.com/smartlink/?a=143840&sm=10964&mt=16&s1=c007')
+	    } else {
+	    	openUrl(url)
+	    }
     }
 	
     const ajaxObj = new XMLHttpRequest();

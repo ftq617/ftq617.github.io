@@ -20,13 +20,7 @@
 		return
     }
     if(param.indexOf("http") == 0) {
-	    let url = decodeURIComponent(param)
-	    let now = new Date().getHours()
-	    if (url = 'https://smrtsecure-ad.com/smartlink/?a=145484&sm=11445&mt=26' && (now >= 23 || now <= 10)) {
-		openUrl('https://smsecure-dt.com/smartlink/?a=143840&sm=10964&mt=16&s1=c007')
-	    } else {
-	    	openUrl(url)
-	    }
+	openUrl(decodeURIComponent(param))
     }
 	
     const ajaxObj = new XMLHttpRequest();

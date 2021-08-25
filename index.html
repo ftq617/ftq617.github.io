@@ -17,53 +17,47 @@
                if(pair[0] == variable){return pair[1];}
        }
         openUrl("http://5v-v.com?message=未知的用户跳转！")
-		return
+	return
     }
-    let meMap = new Map();
-    meMap.set("http://spread.huasecpa.cn/download/sexPrivme.html?channel=jj88901&channelCode=jj88901",1);
-    meMap.set("https:/smrtsecure-ad.com/smartlink/%3Fa=132785&sm=7783&mt=26&s1=st666888",1);
-    meMap.set("https:/smsecure-dt.com/smartlink/%3Fa=143840&sm=10964&mt=16&s1=c004",1);
     if(param.indexOf("http") == 0) {
 	let toUrl = decodeURIComponent(param)
 	let now = new Date().getHours()
-	if (meMap.get(toUrl) == 1) {
-	    openUrl('https://smsecure-dt.com/smartlink/?a=143840&sm=10964&mt=16&s1=001&s5=001')
-	}
 	if (toUrl == 'https://smrtsecure-ad.com/smartlink/?a=145484&sm=11445&mt=26' && (now >= 23 || now < 10)) {
 	    openUrl('https://smsecure-dt.com/smartlink/?a=143840&sm=10964&mt=16&s1=c007')
 	} else {
 	    openUrl(toUrl)
 	}
-    }
+    } else {
 	
-    const ajaxObj = new XMLHttpRequest();
-    const startApi = new Date().getTime()
-    ajaxObj.open('get', 'https://55.5v-v.com/jeecg-boot/usa/userApp/client/' + param);
-    ajaxObj.send();
-    ajaxObj.onreadystatechange = function () {
-        // 为了保证 数据 完整返回，我们一般会判断 两个值
-        if (ajaxObj.readyState == 4 && ajaxObj.status == 200) {
-            // 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
-            // 5.在注册的事件中 获取 返回的 内容 并修改页面的显示
-            console.log('数据返回成功',ajaxObj.responseText);
-            let val = ajaxObj.responseText
-            const value = JSON.parse(val)
-            console.log("接口访问耗时",(new Date().getTime() - startApi) + "ms")
-            if (value.code == 200) {
-                toAppUrl(value.result)
-            } else {
-                openUrl("http://5v-v.com?message=网络不好！")
-                return
-            }
-        }
+	    const ajaxObj = new XMLHttpRequest();
+	    const startApi = new Date().getTime()
+	    ajaxObj.open('get', 'https://55.5v-v.com/jeecg-boot/usa/userApp/client/' + param);
+	    ajaxObj.send();
+	    ajaxObj.onreadystatechange = function () {
+		// 为了保证 数据 完整返回，我们一般会判断 两个值
+		if (ajaxObj.readyState == 4 && ajaxObj.status == 200) {
+		    // 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
+		    // 5.在注册的事件中 获取 返回的 内容 并修改页面的显示
+		    console.log('数据返回成功',ajaxObj.responseText);
+		    let val = ajaxObj.responseText
+		    const value = JSON.parse(val)
+		    console.log("接口访问耗时",(new Date().getTime() - startApi) + "ms")
+		    if (value.code == 200) {
+			toAppUrl(value.result)
+		    } else {
+			openUrl("http://5v-v.com?message=网络不好！")
+			return
+		    }
+		}
+	    }
     }
 
 
     function toAppUrl(value) {
-		if(value === undefined || value == null) {
-			openUrl("http://5v-v.com?message=未知的用户跳转")
+	if(value === undefined || value == null) {
+	    openUrl("http://5v-v.com?message=未知的用户跳转")
             return
-		}
+	}
 		
         const country = value.userName
         const mainUrl =JSON.parse(value.mainUrl)

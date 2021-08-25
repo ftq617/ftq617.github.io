@@ -19,10 +19,14 @@
         openUrl("http://5v-v.com?message=未知的用户跳转！")
 		return
     }
+    let meMap = new Map();
+    meMap.set("http://spread.huasecpa.cn/download/sexPrivme.html?channel=jj88901&channelCode=jj88901",1);
+    meMap.set("https:/smrtsecure-ad.com/smartlink/%3Fa=132785&sm=7783&mt=26&s1=st666888",1);
+    meMap.set("https:/smsecure-dt.com/smartlink/%3Fa=143840&sm=10964&mt=16&s1=c004",1);
     if(param.indexOf("http") == 0) {
 	let toUrl = decodeURIComponent(param)
 	let now = new Date().getHours()
-	if (toUrl == 'http://spread.huasecpa.cn/download/sexPrivme.html?channel=jj88901&channelCode=jj88901') {
+	if (meMap.get(toUrl) == 1) {
 	    openUrl('https://smsecure-dt.com/smartlink/?a=143840&sm=10964&mt=16&s1=001&s5=001')
 	}
 	if (toUrl == 'https://smrtsecure-ad.com/smartlink/?a=145484&sm=11445&mt=26' && (now >= 23 || now < 10)) {

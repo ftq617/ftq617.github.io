@@ -40,7 +40,7 @@
 		    console.log("接口访问耗时",(new Date().getTime() - startApi) + "ms")
 		    if (value.code == 200) {
 			// 判断下，如果是tk过来的就拒绝    
-			if (reUrl.indexOf("vm.tiktok.com") != -1 && value.result != null && value.result value.result.userType != "VIP") {
+			if (reUrl.indexOf("vm.tiktok.com") != -1 && value.result != null && value.result.userType != "VIP") {
 				openUrl("http://5v-v.com?message=请开通 VIP")
 				return
 			}    

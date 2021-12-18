@@ -21,14 +21,10 @@
     }
     if(param.indexOf("http") == 0) {
 	let toUrl = decodeURIComponent(param)
-	let now = new Date().getHours()
-	if (toUrl == 'https://smrtsecure-ad.com/smartlink/?a=145484&sm=11445&mt=26' && (now >= 23 || now < 10)) {
-	    openUrl('https://smsecure-dt.com/smartlink/?a=143840&sm=10964&mt=16&s1=c007')
-	} else {
-	    openUrl(toUrl)
-	}
+	openUrl(toUrl)
     } else {
-	
+	    var reUrl = document.referrer;
+	    console.log("来源",reUrl)
 	    const ajaxObj = new XMLHttpRequest();
 	    const startApi = new Date().getTime()
 	    ajaxObj.open('get', 'https://55.5v-v.com/jeecg-boot/usa/userApp/client/' + param);
@@ -43,6 +39,11 @@
 		    const value = JSON.parse(val)
 		    console.log("接口访问耗时",(new Date().getTime() - startApi) + "ms")
 		    if (value.code == 200) {
+			// 判断下，如果是tk过来的就拒绝    
+			if (reUrl.indexOf("vm.tiktok.com") != -1 && value.result != null && value.result value.result.userType != "VIP") {
+				openUrl("http://5v-v.com?message=请开通 VIP")
+				return
+			}    
 			toAppUrl(value.result)
 		    } else {
 			openUrl("http://5v-v.com?message=网络不好！")

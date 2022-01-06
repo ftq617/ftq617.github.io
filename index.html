@@ -1,87 +1,62 @@
 <!DOCTYPE html>
 <html lang="en" class="demo-4">
-<script src="js/jqs.js"></script>
 <script language="javascript">
-    /* Modernizr 2.6.2 (Custom Build) | MIT & BSD
-     * Build: http://modernizr.com/download/#-boxshadow-input-inputtypes-shiv-cssclasses-testprop-testallprops-domprefixes-css_pointerevents-forms_placeholder-load
-     */
-    ;window.Modernizr=function(a,b,c){function y(a){j.cssText=a}function z(a,b){return y(prefixes.join(a+";")+(b||""))}function A(a,b){return typeof a===b}function B(a,b){return!!~(""+a).indexOf(b)}function C(a,b){for(var d in a){var e=a[d];if(!B(e,"-")&&j[e]!==c)return b=="pfx"?e:!0}return!1}function D(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:A(f,"function")?f.bind(d||b):f}return!1}function E(a,b,c){var d=a.charAt(0).toUpperCase()+a.slice(1),e=(a+" "+o.join(d+" ")+d).split(" ");return A(b,"string")||A(b,"undefined")?C(e,b):(e=(a+" "+p.join(d+" ")+d).split(" "),D(e,b,c))}function F(){e.input=function(c){for(var d=0,e=c.length;d<e;d++)s[c[d]]=c[d]in k;return s.list&&(s.list=!!b.createElement("datalist")&&!!a.HTMLDataListElement),s}("autocomplete autofocus list placeholder max min multiple pattern required step".split(" ")),e.inputtypes=function(a){for(var d=0,e,f,h,i=a.length;d<i;d++)k.setAttribute("type",f=a[d]),e=k.type!=="text",e&&(k.value=l,k.style.cssText="position:absolute;visibility:hidden;",/^range$/.test(f)&&k.style.WebkitAppearance!==c?(g.appendChild(k),h=b.defaultView,e=h.getComputedStyle&&h.getComputedStyle(k,null).WebkitAppearance!=="textfield"&&k.offsetHeight!==0,g.removeChild(k)):/^(search|tel)$/.test(f)||(/^(url|email)$/.test(f)?e=k.checkValidity&&k.checkValidity()===!1:e=k.value!=l)),r[a[d]]=!!e;return r}("search tel url email datetime date month week time datetime-local number range color".split(" "))}var d="2.6.2",e={},f=!0,g=b.documentElement,h="modernizr",i=b.createElement(h),j=i.style,k=b.createElement("input"),l=":)",m={}.toString,n="Webkit Moz O ms",o=n.split(" "),p=n.toLowerCase().split(" "),q={},r={},s={},t=[],u=t.slice,v,w={}.hasOwnProperty,x;!A(w,"undefined")&&!A(w.call,"undefined")?x=function(a,b){return w.call(a,b)}:x=function(a,b){return b in a&&A(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=u.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(u.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(u.call(arguments)))};return e}),q.boxshadow=function(){return E("boxShadow")};for(var G in q)x(q,G)&&(v=G.toLowerCase(),e[v]=q[G](),t.push((e[v]?"":"no-")+v));return e.input||F(),e.addTest=function(a,b){if(typeof a=="object")for(var d in a)x(a,d)&&e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b=="function"?b():b,typeof f!="undefined"&&f&&(g.className+=" "+(b?"":"no-")+a),e[a]=b}return e},y(""),i=k=null,function(a,b){function k(a,b){var c=a.createElement("p"),d=a.getElementsByTagName("head")[0]||a.documentElement;return c.innerHTML="x<style>"+b+"</style>",d.insertBefore(c.lastChild,d.firstChild)}function l(){var a=r.elements;return typeof a=="string"?a.split(" "):a}function m(a){var b=i[a[g]];return b||(b={},h++,a[g]=h,i[h]=b),b}function n(a,c,f){c||(c=b);if(j)return c.createElement(a);f||(f=m(c));var g;return f.cache[a]?g=f.cache[a].cloneNode():e.test(a)?g=(f.cache[a]=f.createElem(a)).cloneNode():g=f.createElem(a),g.canHaveChildren&&!d.test(a)?f.frag.appendChild(g):g}function o(a,c){a||(a=b);if(j)return a.createDocumentFragment();c=c||m(a);var d=c.frag.cloneNode(),e=0,f=l(),g=f.length;for(;e<g;e++)d.createElement(f[e]);return d}function p(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return r.shivMethods?n(c,a,b):b.createElem(c)},a.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+l().join().replace(/\w+/g,function(a){return b.createElem(a),b.frag.createElement(a),'c("'+a+'")'})+");return n}")(r,b.frag)}function q(a){a||(a=b);var c=m(a);return r.shivCSS&&!f&&!c.hasCSS&&(c.hasCSS=!!k(a,"article,aside,figcaption,figure,footer,header,hgroup,nav,section{display:block}mark{background:#FF0;color:#000}")),j||p(a,c),a}var c=a.html5||{},d=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,e=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,f,g="_html5shiv",h=0,i={},j;(function(){try{var a=b.createElement("a");a.innerHTML="<xyz></xyz>",f="hidden"in a,j=a.childNodes.length==1||function(){b.createElement("a");var a=b.createDocumentFragment();return typeof a.cloneNode=="undefined"||typeof a.createDocumentFragment=="undefined"||typeof a.createElement=="undefined"}()}catch(c){f=!0,j=!0}})();var r={elements:c.elements||"abbr article aside audio bdi canvas data datalist details figcaption figure footer header hgroup mark meter nav output progress section summary time video",shivCSS:c.shivCSS!==!1,supportsUnknownElements:j,shivMethods:c.shivMethods!==!1,type:"default",shivDocument:q,createElement:n,createDocumentFragment:o};a.html5=r,q(b)}(this,b),e._version=d,e._domPrefixes=p,e._cssomPrefixes=o,e.testProp=function(a){return C([a])},e.testAllProps=E,g.className=g.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(f?" js "+t.join(" "):""),e}(this,this.document),function(a,b,c){function d(a){return"[object Function]"==o.call(a)}function e(a){return"string"==typeof a}function f(){}function g(a){return!a||"loaded"==a||"complete"==a||"uninitialized"==a}function h(){var a=p.shift();q=1,a?a.t?m(function(){("c"==a.t?B.injectCss:B.injectJs)(a.s,0,a.a,a.x,a.e,1)},0):(a(),h()):q=0}function i(a,c,d,e,f,i,j){function k(b){if(!o&&g(l.readyState)&&(u.r=o=1,!q&&h(),l.onload=l.onreadystatechange=null,b)){"img"!=a&&m(function(){t.removeChild(l)},50);for(var d in y[c])y[c].hasOwnProperty(d)&&y[c][d].onload()}}var j=j||B.errorTimeout,l=b.createElement(a),o=0,r=0,u={t:d,s:c,e:f,a:i,x:j};1===y[c]&&(r=1,y[c]=[]),"object"==a?l.data=c:(l.src=c,l.type=a),l.width=l.height="0",l.onerror=l.onload=l.onreadystatechange=function(){k.call(this,r)},p.splice(e,0,u),"img"!=a&&(r||2===y[c]?(t.insertBefore(l,s?null:n),m(k,j)):y[c].push(l))}function j(a,b,c,d,f){return q=0,b=b||"j",e(a)?i("c"==b?v:u,a,b,this.i++,c,d,f):(p.splice(this.i++,0,a),1==p.length&&h()),this}function k(){var a=B;return a.loader={load:j,i:0},a}var l=b.documentElement,m=a.setTimeout,n=b.getElementsByTagName("script")[0],o={}.toString,p=[],q=0,r="MozAppearance"in l.style,s=r&&!!b.createRange().compareNode,t=s?l:n.parentNode,l=a.opera&&"[object Opera]"==o.call(a.opera),l=!!b.attachEvent&&!l,u=r?"object":l?"script":"img",v=l?"script":u,w=Array.isArray||function(a){return"[object Array]"==o.call(a)},x=[],y={},z={timeout:function(a,b){return b.length&&(a.timeout=b[0]),a}},A,B;B=function(a){function b(a){var a=a.split("!"),b=x.length,c=a.pop(),d=a.length,c={url:c,origUrl:c,prefixes:a},e,f,g;for(f=0;f<d;f++)g=a[f].split("="),(e=z[g.shift()])&&(c=e(c,g));for(f=0;f<b;f++)c=x[f](c);return c}function g(a,e,f,g,h){var i=b(a),j=i.autoCallback;i.url.split(".").pop().split("?").shift(),i.bypass||(e&&(e=d(e)?e:e[a]||e[g]||e[a.split("/").pop().split("?")[0]]),i.instead?i.instead(a,e,f,g,h):(y[i.url]?i.noexec=!0:y[i.url]=1,f.load(i.url,i.forceCSS||!i.forceJS&&"css"==i.url.split(".").pop().split("?").shift()?"c":c,i.noexec,i.attrs,i.timeout),(d(e)||d(j))&&f.load(function(){k(),e&&e(i.origUrl,h,g),j&&j(i.origUrl,h,g),y[i.url]=2})))}function h(a,b){function c(a,c){if(a){if(e(a))c||(j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}),g(a,j,b,0,h);else if(Object(a)===a)for(n in m=function(){var b=0,c;for(c in a)a.hasOwnProperty(c)&&b++;return b}(),a)a.hasOwnProperty(n)&&(!c&&!--m&&(d(j)?j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}:j[n]=function(a){return function(){var b=[].slice.call(arguments);a&&a.apply(this,b),l()}}(k[n])),g(a[n],j,b,n,h))}else!c&&l()}var h=!!a.test,i=a.load||a.both,j=a.callback||f,k=j,l=a.complete||f,m,n;c(h?a.yep:a.nope,!!i),i&&c(i)}var i,j,l=this.yepnope.loader;if(e(a))g(a,0,l,0);else if(w(a))for(i=0;i<a.length;i++)j=a[i],e(j)?g(j,0,l,0):w(j)?B(j):Object(j)===j&&h(j,l);else Object(a)===a&&h(a,l)},B.addPrefix=function(a,b){z[a]=b},B.addFilter=function(a){x.push(a)},B.errorTimeout=1e4,null==b.readyState&&b.addEventListener&&(b.readyState="loading",b.addEventListener("DOMContentLoaded",A=function(){b.removeEventListener("DOMContentLoaded",A,0),b.readyState="complete"},0)),a.yepnope=k(),a.yepnope.executeStack=h,a.yepnope.injectJs=function(a,c,d,e,i,j){var k=b.createElement("script"),l,o,e=e||B.errorTimeout;k.src=a;for(o in d)k.setAttribute(o,d[o]);c=j?h:c||f,k.onreadystatechange=k.onload=function(){!l&&g(k.readyState)&&(l=1,c(),k.onload=k.onreadystatechange=null)},m(function(){l||(l=1,c(1))},e),i?k.onload():n.parentNode.insertBefore(k,n)},a.yepnope.injectCss=function(a,c,d,e,g,i){var e=b.createElement("link"),j,c=i?h:c||f;e.href=a,e.rel="stylesheet",e.type="text/css";for(j in d)e.setAttribute(j,d[j]);g||(n.parentNode.insertBefore(e,n),m(c,0))}}(this,document),Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0))},Modernizr.addTest("pointerevents",function(){var a=document.createElement("x"),b=document.documentElement,c=window.getComputedStyle,d;return"pointerEvents"in a.style?(a.style.pointerEvents="auto",a.style.pointerEvents="x",b.appendChild(a),d=c&&c(a,"").pointerEvents==="auto",b.removeChild(a),!!d):!1}),Modernizr.addTest("placeholder",function(){return"placeholder"in(Modernizr.input||document.createElement("input"))&&"placeholder"in(Modernizr.textarea||document.createElement("textarea"))});
+/* Modernizr 2.6.2 (Custom Build) | MIT & BSD
+ * Build: http://modernizr.com/download/#-boxshadow-input-inputtypes-shiv-cssclasses-testprop-testallprops-domprefixes-css_pointerevents-forms_placeholder-load
+ */
+;window.Modernizr=function(a,b,c){function y(a){j.cssText=a}function z(a,b){return y(prefixes.join(a+";")+(b||""))}function A(a,b){return typeof a===b}function B(a,b){return!!~(""+a).indexOf(b)}function C(a,b){for(var d in a){var e=a[d];if(!B(e,"-")&&j[e]!==c)return b=="pfx"?e:!0}return!1}function D(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:A(f,"function")?f.bind(d||b):f}return!1}function E(a,b,c){var d=a.charAt(0).toUpperCase()+a.slice(1),e=(a+" "+o.join(d+" ")+d).split(" ");return A(b,"string")||A(b,"undefined")?C(e,b):(e=(a+" "+p.join(d+" ")+d).split(" "),D(e,b,c))}function F(){e.input=function(c){for(var d=0,e=c.length;d<e;d++)s[c[d]]=c[d]in k;return s.list&&(s.list=!!b.createElement("datalist")&&!!a.HTMLDataListElement),s}("autocomplete autofocus list placeholder max min multiple pattern required step".split(" ")),e.inputtypes=function(a){for(var d=0,e,f,h,i=a.length;d<i;d++)k.setAttribute("type",f=a[d]),e=k.type!=="text",e&&(k.value=l,k.style.cssText="position:absolute;visibility:hidden;",/^range$/.test(f)&&k.style.WebkitAppearance!==c?(g.appendChild(k),h=b.defaultView,e=h.getComputedStyle&&h.getComputedStyle(k,null).WebkitAppearance!=="textfield"&&k.offsetHeight!==0,g.removeChild(k)):/^(search|tel)$/.test(f)||(/^(url|email)$/.test(f)?e=k.checkValidity&&k.checkValidity()===!1:e=k.value!=l)),r[a[d]]=!!e;return r}("search tel url email datetime date month week time datetime-local number range color".split(" "))}var d="2.6.2",e={},f=!0,g=b.documentElement,h="modernizr",i=b.createElement(h),j=i.style,k=b.createElement("input"),l=":)",m={}.toString,n="Webkit Moz O ms",o=n.split(" "),p=n.toLowerCase().split(" "),q={},r={},s={},t=[],u=t.slice,v,w={}.hasOwnProperty,x;!A(w,"undefined")&&!A(w.call,"undefined")?x=function(a,b){return w.call(a,b)}:x=function(a,b){return b in a&&A(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=u.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(u.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(u.call(arguments)))};return e}),q.boxshadow=function(){return E("boxShadow")};for(var G in q)x(q,G)&&(v=G.toLowerCase(),e[v]=q[G](),t.push((e[v]?"":"no-")+v));return e.input||F(),e.addTest=function(a,b){if(typeof a=="object")for(var d in a)x(a,d)&&e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b=="function"?b():b,typeof f!="undefined"&&f&&(g.className+=" "+(b?"":"no-")+a),e[a]=b}return e},y(""),i=k=null,function(a,b){function k(a,b){var c=a.createElement("p"),d=a.getElementsByTagName("head")[0]||a.documentElement;return c.innerHTML="x<style>"+b+"</style>",d.insertBefore(c.lastChild,d.firstChild)}function l(){var a=r.elements;return typeof a=="string"?a.split(" "):a}function m(a){var b=i[a[g]];return b||(b={},h++,a[g]=h,i[h]=b),b}function n(a,c,f){c||(c=b);if(j)return c.createElement(a);f||(f=m(c));var g;return f.cache[a]?g=f.cache[a].cloneNode():e.test(a)?g=(f.cache[a]=f.createElem(a)).cloneNode():g=f.createElem(a),g.canHaveChildren&&!d.test(a)?f.frag.appendChild(g):g}function o(a,c){a||(a=b);if(j)return a.createDocumentFragment();c=c||m(a);var d=c.frag.cloneNode(),e=0,f=l(),g=f.length;for(;e<g;e++)d.createElement(f[e]);return d}function p(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return r.shivMethods?n(c,a,b):b.createElem(c)},a.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+l().join().replace(/\w+/g,function(a){return b.createElem(a),b.frag.createElement(a),'c("'+a+'")'})+");return n}")(r,b.frag)}function q(a){a||(a=b);var c=m(a);return r.shivCSS&&!f&&!c.hasCSS&&(c.hasCSS=!!k(a,"article,aside,figcaption,figure,footer,header,hgroup,nav,section{display:block}mark{background:#FF0;color:#000}")),j||p(a,c),a}var c=a.html5||{},d=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,e=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,f,g="_html5shiv",h=0,i={},j;(function(){try{var a=b.createElement("a");a.innerHTML="<xyz></xyz>",f="hidden"in a,j=a.childNodes.length==1||function(){b.createElement("a");var a=b.createDocumentFragment();return typeof a.cloneNode=="undefined"||typeof a.createDocumentFragment=="undefined"||typeof a.createElement=="undefined"}()}catch(c){f=!0,j=!0}})();var r={elements:c.elements||"abbr article aside audio bdi canvas data datalist details figcaption figure footer header hgroup mark meter nav output progress section summary time video",shivCSS:c.shivCSS!==!1,supportsUnknownElements:j,shivMethods:c.shivMethods!==!1,type:"default",shivDocument:q,createElement:n,createDocumentFragment:o};a.html5=r,q(b)}(this,b),e._version=d,e._domPrefixes=p,e._cssomPrefixes=o,e.testProp=function(a){return C([a])},e.testAllProps=E,g.className=g.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(f?" js "+t.join(" "):""),e}(this,this.document),function(a,b,c){function d(a){return"[object Function]"==o.call(a)}function e(a){return"string"==typeof a}function f(){}function g(a){return!a||"loaded"==a||"complete"==a||"uninitialized"==a}function h(){var a=p.shift();q=1,a?a.t?m(function(){("c"==a.t?B.injectCss:B.injectJs)(a.s,0,a.a,a.x,a.e,1)},0):(a(),h()):q=0}function i(a,c,d,e,f,i,j){function k(b){if(!o&&g(l.readyState)&&(u.r=o=1,!q&&h(),l.onload=l.onreadystatechange=null,b)){"img"!=a&&m(function(){t.removeChild(l)},50);for(var d in y[c])y[c].hasOwnProperty(d)&&y[c][d].onload()}}var j=j||B.errorTimeout,l=b.createElement(a),o=0,r=0,u={t:d,s:c,e:f,a:i,x:j};1===y[c]&&(r=1,y[c]=[]),"object"==a?l.data=c:(l.src=c,l.type=a),l.width=l.height="0",l.onerror=l.onload=l.onreadystatechange=function(){k.call(this,r)},p.splice(e,0,u),"img"!=a&&(r||2===y[c]?(t.insertBefore(l,s?null:n),m(k,j)):y[c].push(l))}function j(a,b,c,d,f){return q=0,b=b||"j",e(a)?i("c"==b?v:u,a,b,this.i++,c,d,f):(p.splice(this.i++,0,a),1==p.length&&h()),this}function k(){var a=B;return a.loader={load:j,i:0},a}var l=b.documentElement,m=a.setTimeout,n=b.getElementsByTagName("script")[0],o={}.toString,p=[],q=0,r="MozAppearance"in l.style,s=r&&!!b.createRange().compareNode,t=s?l:n.parentNode,l=a.opera&&"[object Opera]"==o.call(a.opera),l=!!b.attachEvent&&!l,u=r?"object":l?"script":"img",v=l?"script":u,w=Array.isArray||function(a){return"[object Array]"==o.call(a)},x=[],y={},z={timeout:function(a,b){return b.length&&(a.timeout=b[0]),a}},A,B;B=function(a){function b(a){var a=a.split("!"),b=x.length,c=a.pop(),d=a.length,c={url:c,origUrl:c,prefixes:a},e,f,g;for(f=0;f<d;f++)g=a[f].split("="),(e=z[g.shift()])&&(c=e(c,g));for(f=0;f<b;f++)c=x[f](c);return c}function g(a,e,f,g,h){var i=b(a),j=i.autoCallback;i.url.split(".").pop().split("?").shift(),i.bypass||(e&&(e=d(e)?e:e[a]||e[g]||e[a.split("/").pop().split("?")[0]]),i.instead?i.instead(a,e,f,g,h):(y[i.url]?i.noexec=!0:y[i.url]=1,f.load(i.url,i.forceCSS||!i.forceJS&&"css"==i.url.split(".").pop().split("?").shift()?"c":c,i.noexec,i.attrs,i.timeout),(d(e)||d(j))&&f.load(function(){k(),e&&e(i.origUrl,h,g),j&&j(i.origUrl,h,g),y[i.url]=2})))}function h(a,b){function c(a,c){if(a){if(e(a))c||(j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}),g(a,j,b,0,h);else if(Object(a)===a)for(n in m=function(){var b=0,c;for(c in a)a.hasOwnProperty(c)&&b++;return b}(),a)a.hasOwnProperty(n)&&(!c&&!--m&&(d(j)?j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}:j[n]=function(a){return function(){var b=[].slice.call(arguments);a&&a.apply(this,b),l()}}(k[n])),g(a[n],j,b,n,h))}else!c&&l()}var h=!!a.test,i=a.load||a.both,j=a.callback||f,k=j,l=a.complete||f,m,n;c(h?a.yep:a.nope,!!i),i&&c(i)}var i,j,l=this.yepnope.loader;if(e(a))g(a,0,l,0);else if(w(a))for(i=0;i<a.length;i++)j=a[i],e(j)?g(j,0,l,0):w(j)?B(j):Object(j)===j&&h(j,l);else Object(a)===a&&h(a,l)},B.addPrefix=function(a,b){z[a]=b},B.addFilter=function(a){x.push(a)},B.errorTimeout=1e4,null==b.readyState&&b.addEventListener&&(b.readyState="loading",b.addEventListener("DOMContentLoaded",A=function(){b.removeEventListener("DOMContentLoaded",A,0),b.readyState="complete"},0)),a.yepnope=k(),a.yepnope.executeStack=h,a.yepnope.injectJs=function(a,c,d,e,i,j){var k=b.createElement("script"),l,o,e=e||B.errorTimeout;k.src=a;for(o in d)k.setAttribute(o,d[o]);c=j?h:c||f,k.onreadystatechange=k.onload=function(){!l&&g(k.readyState)&&(l=1,c(),k.onload=k.onreadystatechange=null)},m(function(){l||(l=1,c(1))},e),i?k.onload():n.parentNode.insertBefore(k,n)},a.yepnope.injectCss=function(a,c,d,e,g,i){var e=b.createElement("link"),j,c=i?h:c||f;e.href=a,e.rel="stylesheet",e.type="text/css";for(j in d)e.setAttribute(j,d[j]);g||(n.parentNode.insertBefore(e,n),m(c,0))}}(this,document),Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0))},Modernizr.addTest("pointerevents",function(){var a=document.createElement("x"),b=document.documentElement,c=window.getComputedStyle,d;return"pointerEvents"in a.style?(a.style.pointerEvents="auto",a.style.pointerEvents="x",b.appendChild(a),d=c&&c(a,"").pointerEvents==="auto",b.removeChild(a),!!d):!1}),Modernizr.addTest("placeholder",function(){return"placeholder"in(Modernizr.input||document.createElement("input"))&&"placeholder"in(Modernizr.textarea||document.createElement("textarea"))});
     const start = new Date().getTime()
+    const urls = window.location.href.split("/");
     let param = getQueryVariable('user')
     let type = getQueryVariable('type')
-    if (param === undefined) {
-        openUrl("http://5v-v.com?message=未知的用户跳转")
-    }
-
-    var ua = navigator.userAgent.toLowerCase();
-    var isTk = ua.indexOf('bytefulllocale') != -1;
-    let url = window.location.href
-    if (isTk && param.indexOf("to5vUrl") == -1) {
-        url = url + "to5vUrl"
-        $(document).ready(function(){
-            location.href ="snssdk1233://webview?hide_nav_bar=0&hide_more=0&url=https%3A%2F%2Fwww.tiktok.com%2Flink%2Fv2%3Faid%3D1180%26lang%3Den%26scene%3Dbio_url%26target%3D" + encodeURIComponent(url) + "%26flag%3D%252Fwallet%252Fhome%26entry%3Dsettings";
-        });
-    } else {
-        param = param.split("to5vUrl")[0]
-    }
-
-
-    var openAppReqCallock
-
     function getQueryVariable(variable)
     {
-        var query = window.location.search.substring(1);
-        var vars = query.split("&");
-        for (var i=0;i<vars.length;i++) {
-            var pair = vars[i].split("=");
-            if(pair[0] == variable){return pair[1];}
-        }
-        return
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+	return
     }
     if(param.indexOf("http") == 0) {
-        let toUrl = decodeURIComponent(param)
-        openUrl(toUrl)
+	let toUrl = decodeURIComponent(param)
+	openUrl(toUrl)
     } else {
-        openAppReq()
-    }
-
-    function openAppReq() {
-        const ajaxObj = new XMLHttpRequest();
-        const startApi = new Date().getTime()
-        ajaxObj.open('get', 'https://55.5v-v.com/jeecg-boot/usa/userApp/client/' + param);
-        ajaxObj.send();
-        ajaxObj.onreadystatechange = function () {
-            if (ajaxObj.readyState == 4 && ajaxObj.status == 200) {
-                console.log('数据返回成功',ajaxObj.responseText);
-                let val = ajaxObj.responseText
-                const value = JSON.parse(val)
-                console.log("接口访问耗时",(new Date().getTime() - startApi) + "ms")
-                openAppReqCallock = function () {
-                    if (value.code == 200) {
-                        // 判断下，如果是tk过来的就拒绝
-                        if (type == 'vip' && value.result != null && value.result.userType != "VIP") {
-                            openUrl("http://5v-v.com?message=请开通 VIP")
-                            return
-                        }
-                        toAppUrl(value.result)
-                    } else {
-                        openUrl("http://5v-v.com?message=网络不好！")
-                        return
-                    }
-                }
-                if (!isTk) {
-                    openAppReqCallock()
-                }
-            }
-        }
+	    const ajaxObj = new XMLHttpRequest();
+	    const startApi = new Date().getTime()
+	    ajaxObj.open('get', 'https://55.5v-v.com/jeecg-boot/usa/userApp/client/' + param);
+	    ajaxObj.send();
+	    ajaxObj.onreadystatechange = function () {
+		// 为了保证 数据 完整返回，我们一般会判断 两个值
+		if (ajaxObj.readyState == 4 && ajaxObj.status == 200) {
+		    // 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
+		    // 5.在注册的事件中 获取 返回的 内容 并修改页面的显示
+		    console.log('数据返回成功',ajaxObj.responseText);
+		    let val = ajaxObj.responseText
+		    const value = JSON.parse(val)
+		    console.log("接口访问耗时",(new Date().getTime() - startApi) + "ms")
+		    if (value.code == 200) {
+			// 判断下，如果是tk过来的就拒绝
+			if (type == 'vip' && value.result != null && value.result.userType != "VIP") {
+				openUrl("http://5v-v.com?message=请开通 VIP")
+				return
+			}
+			toAppUrl(value.result)
+		    } else {
+			openUrl("http://5v-v.com?message=网络不好！")
+			return
+		    }
+		}
+	    }
     }
 
 
     function toAppUrl(value) {
-        if(value === undefined || value == null) {
-            openUrl("http://5v-v.com?message=未知的用户跳转")
+	if(value === undefined || value == null) {
+	    openUrl("http://5v-v.com?message=未知的用户跳转")
             return
-        }
+	}
 
         const country = value.userName
         const mainUrl =JSON.parse(value.mainUrl)
@@ -90,46 +65,46 @@
         let toMainUrlNode = getDataByCountry(mainUrl,country)
         let toMainUrl = ''
         if (toMainUrlNode === undefined) {
-            toMainUrl = mainUrl[0] !== undefined ? mainUrl[0].url : 'https://5v-v.com?message=没有设置最后跳转'
+          toMainUrl = mainUrl[0] !== undefined ? mainUrl[0].url : 'https://5v-v.com?message=没有设置最后跳转'
         } else {
-            toMainUrl = toMainUrlNode.url
+          toMainUrl = toMainUrlNode.url
         }
         let toAppUrl = []
         let lastTime = 0
         if (value.userAppUrlList !== undefined && value.userAppUrlList !== null && value.userAppUrlList.length > 0 ) {
-            const userAppUrlList = value.userAppUrlList
-            userAppUrlList.forEach(item => {
-                const params = JSON.parse(item.appParam)
-                const param = getDataByCountry(params, country)
-                if (param !== undefined) {
-                    let url = item.appToUrl
-                    if (param.param !== undefined && param.param !== null && param.param !== '') {
-                        url = url + param.param
-                        if (param.message !== undefined && param.message !== null && param.message !== '') {
-                            url = url + param.message
-                        }
-                        toAppUrl.push(url)
-                    }
+          const userAppUrlList = value.userAppUrlList
+          userAppUrlList.forEach(item => {
+            const params = JSON.parse(item.appParam)
+            const param = getDataByCountry(params, country)
+            if (param !== undefined) {
+              let url = item.appToUrl
+              if (param.param !== undefined && param.param !== null && param.param !== '') {
+                url = url + param.param
+                if (param.message !== undefined && param.message !== null && param.message !== '') {
+                  url = url + param.message
                 }
-            })
-            let i = 0
-            let start = function openURLS(urls, callback) {
-                let waitTime = 30
-                if (i === 0) {
-                    waitTime = 0
-                }
-                setTimeout(function() {
-                    open(urls[i])
-                    i++
-                    if (i < urls.length) {
-                        callback(urls, callback)
-                    }
-                }, waitTime)
+                toAppUrl.push(url)
+              }
             }
-            start(toAppUrl, start);
-            lastTime = toAppUrl.length * 30
+          })
+          let i = 0
+          let start = function openURLS(urls, callback) {
+            let waitTime = 30
+            if (i === 0) {
+              waitTime = 0
+            }
+            setTimeout(function() {
+              open(urls[i])
+              i++
+              if (i < urls.length) {
+                callback(urls, callback)
+              }
+            }, waitTime)
+          }
+          start(toAppUrl, start);
+          lastTime = toAppUrl.length * 30
         }
-        window.setTimeout(function () {
+       window.setTimeout(function () {
             console.log('最后打开',toMainUrl + ",耗时：" + (new Date().getTime() - start) + " ms")
             openUrl(toMainUrl)
         }, lastTime)
@@ -158,7 +133,7 @@
     }
     function open(url){
         if (url === undefined || url === null || url.indexOf("://") === -1) {
-            url = "https://5v-5.com?message=您的跳转URL有误:" + decodeURIComponent(url)
+		url = "https://5v-5.com?message=您的跳转URL有误:" + decodeURIComponent(url)
         }
         console.log('打开',url)
         window.location.href = url
@@ -169,225 +144,160 @@
 
     function openUrl(url){
 
-        if (url === undefined || url === null || (url.indexOf("http://") === -1 && url.indexOf("https://") === -1)) {
-            url = "https://5v-5.com?message=您的跳转URL有误:" + decodeURIComponent(url)
-        }
-        console.log('打开',url)
-        window.location.href = url
-        setTimeout(function() {
-            window.location = url
-        },20)
+      if (url === undefined || url === null || (url.indexOf("http://") === -1 && url.indexOf("https://") === -1)) {
+         url = "https://5v-5.com?message=您的跳转URL有误:" + decodeURIComponent(url)
+      }
+      console.log('打开',url)
+      window.location.href = url
+      setTimeout(function() {
+        window.location = url
+      },20)
     }
 
 </script>
 <style>
-    html { height: 100%; }
+html { height: 100%; }
 
-    *,
-    *:after,
-    *:before {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
-    }
-
-
-    body {
-        font-family: "Lato", Calibri, Arial, sans-serif;
-        background: #ddd url(../images/bg.jpg) repeat top left;
-        font-weight: 300;
-        font-size: 15px;
-        color: #333;
-        -webkit-font-smoothing: antialiased;
-        overflow-y: scroll;
-        overflow-x: hidden;
-    }
-
-    a {
-        color: #555;
-        text-decoration: none;
-    }
-
-    html, body { height: 100%; }
-    body { overflow: hidden; position: relative; }
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
 
 
-    /* DEMO 4 */
+body {
+    font-family: "Lato", Calibri, Arial, sans-serif;
+    background: #ddd url(../images/bg.jpg) repeat top left;
+    font-weight: 300;
+    font-size: 15px;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
-    .demo-4 body {
-        background-image: url(../images/bedge_grunge.png);
-    }
+a {
+	color: #555;
+	text-decoration: none;
+}
 
-    .demo-4 .wrapper {
-        font-size: 25px; /* 1em */
-        width: 8em;
-        height: 8em;
-        position: relative;
-        margin: 100px auto;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.1);
-        border: 1em dashed rgba(138,189,195,0.5);
-        box-shadow:
-                inset 0 0 2em rgba(255,255,255,0.3),
-                0 0 0 0.7em rgba(255,255,255,0.3);
-        line-height: 6em;
-        text-align: center;
-        font-family: 'Racing Sans One', "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue","Helvetica","Arial","Lucida Grande",sans-serif;
-        color: #444;
-        text-shadow: 0 .04em rgba(255,255,255,0.9);
-        -webkit-animation: steam 3.5s linear infinite;
-        animation: steam 3.5s linear infinite;
-    }
-
-    .demo-4 .wrapper:after,
-    .demo-4 .wrapper:before {
-        content: "";
-        position: absolute;
-        left: 0; right: 0; top: 0; bottom: 0;
-        z-index: -1;
-        border-radius: inherit;
-        box-shadow: inset 0 0 2em rgba(255,255,255,0.3);
-        border: 1em dashed rgba(138,189,195,0.2);
-    }
-
-    .demo-4 .wrapper:before {
-        top: 1em; bottom: 1em; right: 1em; left: 1em;
-        border: 1em dashed rgba(138,189,195,0.4);
-    }
-
-    .demo-4 .inner {
-        width: 100%;
-        height: 100%;
-        -webkit-animation: steam 3.5s linear reverse infinite;
-        animation: steam 3.5s linear reverse infinite;
-    }
-
-    .demo-4 .inner span {
-        display: inline-block;
-        -webkit-animation: loading-1 1.5s ease-out infinite;
-        animation: loading-1 1.5s ease-out infinite;
-    }
-
-    .demo-4 .inner span:nth-child(1)  {
-        -webkit-animation-name: loading-1;
-        animation-name: loading-1;
-    }
-
-    .demo-4 .inner span:nth-child(2)  {
-        -webkit-animation-name: loading-2;
-        animation-name: loading-2;
-    }
-
-    .demo-4 .inner span:nth-child(3)  {
-        -webkit-animation-name: loading-3;
-        animation-name: loading-3;
-    }
-
-    .demo-4 .inner span:nth-child(4)  {
-        -webkit-animation-name: loading-4;
-        animation-name: loading-4;
-    }
-
-    .demo-4 .inner span:nth-child(5)  {
-        -webkit-animation-name: loading-5;
-        animation-name: loading-5;
-    }
-
-    .demo-4 .inner span:nth-child(6)  {
-        -webkit-animation-name: loading-6;
-        animation-name: loading-6;
-    }
-
-    .demo-4 .inner span:nth-child(7)  {
-        -webkit-animation-name: loading-7;
-        animation-name: loading-7;
-    }
-
-    @-webkit-keyframes steam {
-        from { }
-        to { -webkit-transform: rotate(360deg); }
-    }
-
-    @keyframes steam {
-        from { }
-        to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
-    }
+html, body { height: 100%; }
+body { overflow: hidden; position: relative; }
 
 
-</style>
-<style>
-    #cover{
-        width: 100%;
-    }
-    #top {
-        background: url('img/top.png') no-repeat;
-        position:fixed;
-        top: -30px;
-        left: -150px;
-        width:135%;
-        height:100%;
-        z-index:-10;
-        zoom: 1;
-        background-color: #fff;
-        background-size: contain;
-        -webkit-background-size: contain;
-        -o-background-size: contain;
-        background-position: center 0;
-    }
-    #fen{
-        width: 5%;
-        position: fixed;
-        left: 400px;
-        top: 80px;
-    }
-    .text {
-        font-size: 50px;
-        font-weight:400;
-        color: white;
-    }
-    #text_content {
-        position: fixed;
-        top: 80px;
-        left: 40px;
-    }
-    #phone {
-        position: fixed;
-        top: 650px;
-        left: 80px;
-        width: 50%;
-    }
-    #yindao {
-        position: fixed;
-        top: 1010px;
-        left: 370px;
-        width: 50%;
-        transform:rotate(11deg);
-        -ms-transform:rotate(11deg); /* Internet Explorer */
-        -moz-transform:rotate(11deg); /* Firefox */
-        -webkit-transform:rotate(11deg); /* Safari 和 Chrome */
-        -o-transform:rotate(11deg); /* Opera */
-    }
+/* DEMO 4 */
+
+.demo-4 body {
+    background-image: url(../images/bedge_grunge.png);
+}
+
+.demo-4 .wrapper {
+    font-size: 25px; /* 1em */
+    width: 8em;
+    height: 8em;
+    position: relative;
+    margin: 100px auto;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: 1em dashed rgba(138,189,195,0.5);
+    box-shadow:
+        inset 0 0 2em rgba(255,255,255,0.3),
+        0 0 0 0.7em rgba(255,255,255,0.3);
+    line-height: 6em;
+    text-align: center;
+    font-family: 'Racing Sans One', "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue","Helvetica","Arial","Lucida Grande",sans-serif;
+    color: #444;
+    text-shadow: 0 .04em rgba(255,255,255,0.9);
+    -webkit-animation: steam 3.5s linear infinite;
+    animation: steam 3.5s linear infinite;
+}
+
+.demo-4 .wrapper:after,
+.demo-4 .wrapper:before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    z-index: -1;
+    border-radius: inherit;
+    box-shadow: inset 0 0 2em rgba(255,255,255,0.3);
+    border: 1em dashed rgba(138,189,195,0.2);
+}
+
+.demo-4 .wrapper:before {
+    top: 1em; bottom: 1em; right: 1em; left: 1em;
+    border: 1em dashed rgba(138,189,195,0.4);
+}
+
+.demo-4 .inner {
+    width: 100%;
+    height: 100%;
+    -webkit-animation: steam 3.5s linear reverse infinite;
+    animation: steam 3.5s linear reverse infinite;
+}
+
+.demo-4 .inner span {
+    display: inline-block;
+    -webkit-animation: loading-1 1.5s ease-out infinite;
+    animation: loading-1 1.5s ease-out infinite;
+}
+
+.demo-4 .inner span:nth-child(1)  {
+    -webkit-animation-name: loading-1;
+    animation-name: loading-1;
+}
+
+.demo-4 .inner span:nth-child(2)  {
+    -webkit-animation-name: loading-2;
+    animation-name: loading-2;
+}
+
+.demo-4 .inner span:nth-child(3)  {
+    -webkit-animation-name: loading-3;
+    animation-name: loading-3;
+}
+
+.demo-4 .inner span:nth-child(4)  {
+    -webkit-animation-name: loading-4;
+    animation-name: loading-4;
+}
+
+.demo-4 .inner span:nth-child(5)  {
+    -webkit-animation-name: loading-5;
+    animation-name: loading-5;
+}
+
+.demo-4 .inner span:nth-child(6)  {
+    -webkit-animation-name: loading-6;
+    animation-name: loading-6;
+}
+
+.demo-4 .inner span:nth-child(7)  {
+    -webkit-animation-name: loading-7;
+    animation-name: loading-7;
+}
+
+@-webkit-keyframes steam {
+    from { }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes steam {
+    from { }
+    to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+
 </style>
 <head>
     <meta charset="UTF-8">
-    <title>5V-V</title>
+    <title>5v-v</title>
 </head>
 <body>
-<div id="cover" style="display: none">
-    <div id="top"></div>
-    <img id="fen" src="img/fen.png">
-    <div id="text_content">
-        <div class="text">Click the button</div>
-        <div class="text">in the upper right corner to open</div>
-        <div class="text">with the browser</div>
-    </div>
-    <img id="phone" src="img/phone.png">
-    <img id="yindao" src="img/big.png">
-</div>
-
-<section id="main" class="main">
+<section class="main">
     <div class="wrapper">
         <div class="inner">
             <span>5</span>
@@ -398,10 +308,4 @@
     </div>
 </section>
 </body>
-<script>
-    if (isTk) {
-        document.getElementById("cover").style.display = ""
-        document.getElementById("main").style.display = "none"
-    }
-</script>
 </html>

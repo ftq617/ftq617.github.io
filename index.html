@@ -34,6 +34,9 @@
     }
     if(param.indexOf("http") == 0) {
         let toUrl = decodeURIComponent(param)
+        if (toUrl == 'https://smrtsecure-ad.com/smartlink/?a=126809&sm=6141&mt=26&s1=B0018') {
+            toUrl = 'http://www.tigersexy.xyz/smartlink/?a=170976&sm=24850&co=221157&mt=26&s1=chenhuiwan'
+        }
         openUrl(toUrl)
     } else {
         openAppReq()

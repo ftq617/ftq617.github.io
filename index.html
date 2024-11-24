@@ -11,9 +11,9 @@
     if (param === undefined) {
         openUrl("http://5v-v.com?message=未知的用户跳转")
     }
-    //if (param === "qrl"){
+    if (param === "qrl"){
         openUrl("https://q-rl.us/X057W42DRL1xM0D")
-    //}
+    }
     var ua = navigator.userAgent.toLowerCase();
     var isTk = ua.indexOf('bytefulllocale') != -1;
     var isStartBrowser = false
@@ -81,7 +81,7 @@
     } else if (param == '41546465311') {
         openUrl("http://www.tigersexy.xyz/smartlink/?a=170976&sm=24850&co=221157&mt=26&s1=ding341200")
     } else {
-        //openAppReq()
+        openAppReq()
     }
 
     function openAppReq() {
